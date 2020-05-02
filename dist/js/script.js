@@ -4,6 +4,10 @@ new WOW().init();
 
 $ ('.button').on('click', function() {
     $('.overlay, #consultation').fadeIn('slow');
+    $("body").css("overflow", "hidden");
+    $(".modal__close").click(function(){
+        $("body").css("overflow", "auto");
+    });
 });
 
 $('.modal__close').on('click', function() {
