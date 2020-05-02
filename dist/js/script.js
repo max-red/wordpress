@@ -1,6 +1,6 @@
-'use strict';
-
 new WOW().init();
+
+// Modal
 
 $ ('.button').on('click', function() {
     $('.overlay, #consultation').fadeIn('slow');
