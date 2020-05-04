@@ -1,8 +1,10 @@
+'use strict';
+
 new WOW().init();
 
 // Modal
 
-$ ('.button').on('click', function() {
+$('.button').on('click', function() {
     $('.overlay, #consultation').fadeIn('slow');
     $("body").css("overflow", "hidden");
     $(".modal__close").click(function(){
@@ -48,6 +50,10 @@ $('.feed-form').validate({
 $('input[name=phone]').mask("+7 (999) 999-99-99");
 
 $('form').submit(function(e) {
+    const isValid = $('.feed-form').valid();
+    if (!isValid) {
+        return;
+    }
     e.preventDefault();
     $.ajax({
         type: "POST",
@@ -65,7 +71,7 @@ $('form').submit(function(e) {
 // Scroll
 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 1600) {
+    if ($(this).scrollTop() > 1500) {
         $('.up').fadeIn();
     } else {
         $('.up').fadeOut();
